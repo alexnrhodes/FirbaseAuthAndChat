@@ -8,8 +8,34 @@
 
 import UIKit
 import FirebaseUI
+import GoogleSignIn
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, GIDSignInDelegate {
+    
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        if let error = error {
+            NSLog("Error signing in with Google: \(error)")
+            return
+        }
+        
+        guard let authentication = user.authentication else { return }
+        
+        let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken, accessToken: authentication.accessToken)
+        
+        Auth.auth().signIn(with: credential) { (authResult, error) in
+            if let error = error {
+                NSLog("Error signing in with Google: \(error)")
+                return
+            }
+            
+            DispatchQueue.main.async {
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let postsTabBarController = storyboard.instantiateViewController(withIdentifier: "PostsTabBarController")
+                self.present(postsTabBarController, animated: true, completion: nil)
+            }
+        }
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
