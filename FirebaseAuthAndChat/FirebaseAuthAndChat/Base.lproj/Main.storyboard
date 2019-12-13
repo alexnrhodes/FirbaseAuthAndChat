@@ -14,20 +14,7 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Wp-Pk-UXw">
-                                <rect key="frame" x="188" y="433" width="38" height="30"/>
-                                <state key="normal" title="Login"/>
-                                <connections>
-                                    <action selector="loginButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ssk-0i-UDC"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="4Wp-Pk-UXw" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="18Q-fm-fOO"/>
-                            <constraint firstItem="4Wp-Pk-UXw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="RZX-y3-DBk"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
@@ -38,7 +25,7 @@
         <!--View Controller-->
         <scene sceneID="v4C-Wa-rbL">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="lJ3-Kf-kwt" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GoogleAuthViewController" modalPresentationStyle="fullScreen" id="lJ3-Kf-kwt" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jbh-s0-H05">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
